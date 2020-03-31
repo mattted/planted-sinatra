@@ -15,12 +15,6 @@ class ApplicationController < Sinatra::Base
     erb :dev
   end
 
-  get '/home' do
-    redirect '/login' if !logged_in?
-    @user = current_user
-    erb :home
-  end
-
   get '/signup' do
     redirect '/home' if logged_in?
     erb :signup

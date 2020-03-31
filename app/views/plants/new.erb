@@ -1,0 +1,27 @@
+<h2>New Plant</h2><br>
+<h4><%= flash[:message] %></h4>
+<form action="/plants" method="post">
+  <label for="name">Name: </label>
+  <input type="text" id="name" name="plant[name]" required>
+  <br>
+  <label for="sci_name">Scientific Name: </label>
+  <input type="text" id="sci_name" name="plant[sci_name]" required>
+  <br>
+  <label for="light">Light Needs: </label>
+  <input type="text" id="light" name="plant[light]" required>
+  <br>
+  <label for="water">Water Needs: </label>
+  <input type="text" id="water" name="plant[water]" required>
+  <br>
+  <label for="fertilizer">Fertlizer Needs: </label>
+  <input type="text" id="fertilizer" name="plant[fertilizer]" required>
+  <br>
+  <label for="temperature">Temperature: </label>
+  <input type="text" id="temperature" name="plant[temperature]" required>
+  <br>
+  <label for="humidity">Humidity: </label>
+  <input type="text" id="humidity" name="plant[humidity]" required>
+  <br>
+  <input type="submit" value="Create Plant">
+</form>
+

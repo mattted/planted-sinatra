@@ -1,0 +1,18 @@
+<div class="container">
+  <a href="/home">Home</a>
+  <a href="/plants/<%= @plant.id.to_s %>/edit">Edit Plant</a>
+  <h2><%= @plant.name %></h2>
+  <h4><%= flash[:message] %></h4>
+  <div>
+    <div class="content">
+      <span>Scientific Name: <%= @plant.sci_name %></span><br>
+      <span>Lighting: <%= @plant.light %></span><br>
+      <span>Water: <%= @plant.water %></span><br>
+      <span>Fertilizer: <%= @plant.fertilizer %></span><br>
+      <span>Temperature: <%= @plant.temperature %></span><br>
+      <span>Humidity: <%= @plant.humidity %></span><br>
+      <br>
+    </div>
+
+  </div>
+</div>
