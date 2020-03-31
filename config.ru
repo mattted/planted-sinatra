@@ -8,4 +8,5 @@ use Rack::MethodOverride
 
 use UsersController
 use PlantsController
+use WaterEventsController
 run ApplicationController
