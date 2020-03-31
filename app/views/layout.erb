@@ -12,6 +12,7 @@
   <body>
     <div class="wrapper">
       <h1>Planted</h1>
+      <%= "<a href='/signup'>Sign Up</a>" if !logged_in? %>
       <%= "<a href='/login'>Login</a>" if !logged_in? %>
       <%= "<a href='/logout'>Logout</a>" if logged_in? %>
       <br>
