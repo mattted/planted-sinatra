@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+
+    <title>Planted</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <%# <link rel="stylesheet" href="/stylesheets/main.css" /> %>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Planted</h1>
+      <%= "<a href='/login'>Login</a>" if !logged_in? %>
+      <%= "<a href='/logout'>Logout</a>" if logged_in? %>
+      <br>
+          <%= yield %>
+
+    <footer>
+      <p>This is a FOOOOOTER!!!!</p>
+    </footer>
+    </div>
+
+  </body>
+</html>

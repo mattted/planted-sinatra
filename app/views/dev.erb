@@ -1,0 +1,17 @@
+<div class="container">
+  <h2>Development</h2><br>
+  <h4><%= flash[:message] %></h4>
+  <br>
+  <div>
+    <div class="content">
+      <ul>
+        <li><b>Ruby:</b> <%= RUBY_VERSION %></li>
+        <li><b>Environment:</b> <%= ENV["RACK_ENV"] %></li>
+        <li><b>Server:</b> <%= @env["SERVER_SOFTWARE"] %></li>
+        <li><b>Port:</b> <%= @env["SERVER_PORT"] %></li>
+      </ul>
+      <br>
+    </div>
+
+  </div>
+</div>
