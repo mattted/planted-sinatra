@@ -18,7 +18,7 @@ class ApplicationController < Sinatra::Base
   get '/home' do
     redirect '/login' if !logged_in?
     @user = current_user
-    erb :home
+    erb :dev
   end
 
   get '/signup' do
