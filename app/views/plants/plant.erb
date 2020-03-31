@@ -1,6 +1,7 @@
 <div class="container">
   <a href="/home">Home</a>
   <a href="/plants/<%= @plant.id.to_s %>/edit">Edit Plant</a>
+  <a href="/plants/<%= @plant.id.to_s %>/delete">Delete Plant</a>
   <h2><%= @plant.name %></h2>
   <h4><%= flash[:message] %></h4>
   <div>
