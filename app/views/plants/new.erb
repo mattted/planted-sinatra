@@ -1,27 +1,52 @@
-<h2>New Plant</h2><br>
+<h2>New Plant</h2>
 <h4><%= flash[:message] %></h4>
 <form action="/plants" method="post">
-  <label for="name">Name: </label>
+  <label for="name">Name: </label><br>
   <input type="text" id="name" name="plant[name]" required>
   <br>
-  <label for="sci_name">Scientific Name: </label>
-  <input type="text" id="sci_name" name="plant[sci_name]" required>
+  <label for="cname">Common Name: </label><br>
+  <input type="text" id="cname" name="plant[cname]">
   <br>
-  <label for="light">Light Needs: </label>
-  <input type="text" id="light" name="plant[light]" required>
+  <label for="sci_name">Scientific Name: </label><br>
+  <input type="text" id="sci_name" name="plant[sci_name]">
   <br>
-  <label for="water">Water Needs: </label>
+  <label for="date">Date Planted/Acquired: </label><br>
+  <input type="date" id="date" name="plant[date]" required>
+  <br>
+  <label for="water_track">Use Planted to track and set water schedule?: </label><br>
+  <select id="water_track" name="plant[water_track]" required>
+    <option value="true">Yes</option>
+    <option value="false">No</option>
+  </select>
+  <br>
+  <label for="water">Initial Water Schedule (days): </label><br>
   <input type="text" id="water" name="plant[water]" required>
   <br>
-  <label for="fertilizer">Fertlizer Needs: </label>
-  <input type="text" id="fertilizer" name="plant[fertilizer]" required>
+  <label for="fert_track">Use Planted to track and set fertilizer schedule?: </label><br>
+  <select id="fert_track" name="plant[fert_track]" required>
+    <option value="true">Yes</option>
+    <option value="false">No</option>
+  </select>
   <br>
-  <label for="temperature">Temperature: </label>
-  <input type="text" id="temperature" name="plant[temperature]" required>
+  <label for="fert">Initial Fertilizer Schedule (days): </label><br>
+  <input type="text" id="fert" name="plant[fert]" required>
   <br>
-  <label for="humidity">Humidity: </label>
-  <input type="text" id="humidity" name="plant[humidity]" required>
+  <label for="light">Light Needs: </label><br>
+  <select id="light" name="plant[light]" required>
+    <option value="Low">Low</option>
+    <option value="Medium">Medium</option>
+    <option value="High">High</option>
+    <option value="Very High">Very High</option>
+  </select>
   <br>
+  <label for="humidity">Humidity Needs: </label><br>
+  <select id="humidity" name="plant[humidity]">
+    <option value="Low">Low</option>
+    <option value="Medium">Medium</option>
+    <option value="High">High</option>
+    <option value="Very High">Very High</option>
+  </select>
+  <br><br>
   <input type="submit" value="Create Plant">
 </form>
 
