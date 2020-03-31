@@ -1,0 +1,14 @@
+<h2>Delete Plant</h2>
+<h4><%= flash[:message] %></h4>
+<h4>Are you sure you wanted to delete <%=@plant.name%> and all associated data?</h4>
+<form action="/plants" method="post">
+  <input type="hidden" id="hidden" name="_method" value="delete">
+  <input type="hidden" id="hidden" name="plant[id]" value="<%=@plant.id%>">
+  <select id="delete" name="delete" required>
+    <option selected='selected' value="no">No</option>
+    <option value="yes">Yes</option>
+  </select>
+  <br><br>
+  <input type="submit" value="Delete">
+</form>
+
