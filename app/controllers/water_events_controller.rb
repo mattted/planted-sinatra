@@ -6,7 +6,10 @@ class WaterEventsController < ApplicationController
   end
 
   get '/plants/:id/water-events' do
+    @plant = exists? if logged_in? && exists? && permission?
+    @wevents = @plant.water_events
     
+    erb :'/water_events/all'
   end
 
   post '/plants/:id/water-events' do

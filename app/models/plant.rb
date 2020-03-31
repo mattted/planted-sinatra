@@ -4,12 +4,13 @@ class Plant < ActiveRecord::Base
   has_many :water_events
   has_many :fert_events
 
-  def calc_water
-    
+  def calc_water_schedule
+    self.water = "whoops"
+
   end
 
-  def can_track_water?
-
+  def water_schedule?
+    self.water_track && self.water_events.count > 1
   end
   
   def calc_fert
