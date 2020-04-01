@@ -11,6 +11,10 @@ class CreatePlantsTable < ActiveRecord::Migration[6.0]
       t.float :fert
       t.string :light
       t.string :humidity
+      t.float :time_until_water
+      t.boolean :water_due
+
+      t.timestamps
     end
   end
 end

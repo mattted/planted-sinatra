@@ -4,6 +4,8 @@ class CreateFertEventTable < ActiveRecord::Migration[6.0]
       t.date :date
       t.string :notes
       t.integer :plant_id
+
+      t.timestamps
     end
   end
 end
