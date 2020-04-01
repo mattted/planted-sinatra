@@ -2,6 +2,8 @@ require 'csv'
 require 'pry'
 
 
+User.create({username: "test", email: "test@test.com", password: "nothing"})
+
 csv_text = File.read(__dir__ + '/csv/Plants19-11-26.csv')
 csv = CSV.parse(csv_text, headers: true)
 user = User.first
