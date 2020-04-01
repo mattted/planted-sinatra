@@ -1,24 +1,41 @@
 <div class="container">
-  <h2>Home: <%= @user.username %></h2>
-  <h4><%= flash[:message] %></h4>
+  <h3>Home: <%= @user.username %></h3>
+  <a href="/plants">View All Plants</a>
+  <a href="/plants/new">Add New Plant</a>
+  <a href="/plants/new-water-event">Water Plants</a>
   <div>
     <div class="content">
-      <a href="/plants/new">Add New Plant</a>
-      <br><br>
-      <ul>
-        <% @user.plants.each do |plant| %>
-          <li>
-            <%# TODO: Add water and fert info %>
-            <h4><a href="/plants/<%= plant.id.to_s %>"><%= plant.name %></a></h4>
-            <span>Common Name: <%= plant.cname %></span><br>
-            <span>Scientific Name: <%= plant.sci_name %></span><br>
-            <span>Lighting: <%= plant.light %></span><br>
-            <span>Humidity: <%= plant.humidity %></span><br>
-            <a href="/plants/<%= plant.id.to_s %>/edit">Edit Plant</a>
-          </li>
+      <h4><%= flash[:message] %></h4>
+      <div>
+        <h4>Recently Added / Updated Plants</h4>
+        <% @rec_plants.each do |plant| %>
+          <div>   
+            <h4><%= plant.name %></h4>
+            <ul>
+              <li>Common Name: <%= plant.cname %></li>
+              <li>Scientific Name:<%= plant.sci_name %></li>
+              <li>Date Acquired/Planted: <%= plant.date %></li>
+            </ul>
+            <a href="/plants/<%=plant.id%>/edit">Edit</a>
+          </div>
         <% end %>
-      </ul>
-      <br>
+      </div>
+
+      <div>
+        <h4>Due or Overdue For Watering</h4>
+        <%# TODO: Verify overdue_plants nil? or empty? %>
+        <span><%= "No plants due/overdue..." if @overdue_plants.nil? %></span>
+        <% @overdue_plants.each do |plant| %>
+          <div>   
+            <h4><%= plant.name %></h4>
+            <ul>
+              <li><%= plant.due_in_on %></li>
+              <li>Water Date: <%= plant.water_due %></li>
+            </ul>
+            <a href="/plants/<%=plant.id%>/edit">Edit</a>
+          </div>
+        <% end %>
+      </div>
     </div>
 
   </div>

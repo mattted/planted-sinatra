@@ -24,4 +24,19 @@ class Plant < ActiveRecord::Base
     end
   end
 
+  def due_in_on
+    days = (self.water_due - DateTime.now.to_date).to_f.round(0)
+    if days == 0
+      "Water Today"
+    elsif days == 1
+      "Water Tomorrow"
+    elsif days == -1
+      "1 Day Overdue"
+    elsif days > 1
+      "Water in #{days} Days"
+    elsif days < -1
+      "#{days.abs} Days Overdue"
+    end
+  end
+
 end
