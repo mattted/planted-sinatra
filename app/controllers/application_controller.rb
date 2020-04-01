@@ -42,7 +42,8 @@ class ApplicationController < Sinatra::Base
     if @user = User.find_by(username: params[:username]).try(:authenticate, params[:password])
       session[:uid] = @user.id 
       @user.plants.each do |plant|
-        plant.calc_water_schedule if plant.water_schedule?
+        plant.calc_avg_water_schedule if plant.water_avg?
+        plant.set_water_due_date
         plant.save
       end
 
