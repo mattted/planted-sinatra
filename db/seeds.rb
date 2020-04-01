@@ -14,7 +14,7 @@ csv.each do |row|
   user.save
 
   hash["water_array"].split(/'/).select{ |elem| elem[0] == "2" }.each do |elem|
-    wevent = plant.water_events.build({date: elem.to_date, notes: "seeded water data"})
+    wevent = plant.water_events.build({date: elem.to_date + 145, notes: "seeded water data"})
     plant.save
   end
 end
