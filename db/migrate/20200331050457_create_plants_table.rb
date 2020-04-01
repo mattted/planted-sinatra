@@ -6,13 +6,12 @@ class CreatePlantsTable < ActiveRecord::Migration[6.0]
       t.string :sci_name
       t.date :date
       t.boolean :water_track
-      t.float :water
+      t.float :water_avg
+      t.date :water_due
       t.boolean :fert_track
       t.float :fert
       t.string :light
       t.string :humidity
-      t.float :time_until_water
-      t.boolean :water_due
 
       t.timestamps
     end

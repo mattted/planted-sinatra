@@ -10,7 +10,7 @@ user = User.find_by(username: "test")
 csv.each do |row|
   hash = row.to_hash
   hash["date"] = hash["date"].to_date
-  hash["water"] = hash["water"].to_f
+  hash["water_avg"] = hash["water_avg"].to_f
   hash["fert"] = hash["fert"].to_f
   plant = user.plants.build(hash.except("water_array", "fert_date_csv"))
   user.save
