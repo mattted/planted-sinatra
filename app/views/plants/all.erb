@@ -1,0 +1,38 @@
+<div class="container">
+  <a href="/home">Home</a>
+  <a href="/plants/new">Add New Plant</a>
+  <a href="/plants/all/new-water-event">New Water Event</a>
+
+  <h2><%= @user.username %>'s Plants</h2>
+  <h4><%= flash[:message] %></h4>
+
+  <div>
+    <div class="content">
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Common Name</th>
+          <th>Scientific Name</th>
+          <th>Date Acquired/Planted</th>
+          <th>Lighting</th>
+          <th>Humidity</th>
+          <th>Water By Date</th>
+          <th>Water Notification</th>
+        </tr>
+        <% @plants.each do |plant| %>
+          <tr>
+            <td><a href="/plants/<%=plant.id%>"><%= plant.name %></a></td>
+            <td><%= plant.cname %></td>
+            <td><%= plant.sci_name %></td>
+            <td><%= plant.date %></td>
+            <td><%= plant.light %></td>
+            <td><%= plant.humidity %></td>
+            <td><%= plant.water_due %></td>
+            <td><%= plant.due_in_on %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+
+</div>
