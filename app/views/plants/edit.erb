@@ -3,7 +3,7 @@
 <h4><%= flash[:message] %></h4>
 <form action="/plants" method="post">
   <input type="hidden" id="hidden" name="_method" value="patch">
-  <input type="hidden" id="hidden" name="plant[id]" value="<%=@plant.id%>">
+  <input type="hidden" id="hidden" name="id" value="<%=@plant.id%>">
   <label for="name">Name: </label><br>
   <input type="text" id="name" name="plant[name]" value="<%=@plant.name%>" required>
   <br>

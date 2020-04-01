@@ -10,7 +10,9 @@
       <%# TODO: Add water/fert helpers to say if/when it is tracked %>
       <span>Common Name: <%= @plant.cname %></span><br>
       <span>Scientific Name: <%= @plant.sci_name %></span><br>
-      <span>Water: <%= @plant.water %></span><br>
+      <span>Water Notification: <%= @plant.due_in_on %></span><br>
+      <span>Water By Date: <%= @plant.water_due %></span><br>
+      <span>Water Schedule: <%= @plant.water_avg %> days</span><br>
       <span>Fertilizer: <%= @plant.fert %></span><br>
       <span>Lighting Needs: <%= @plant.light %></span><br>
       <span>Preferred Humidity: <%= @plant.humidity %></span><br>

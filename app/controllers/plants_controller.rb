@@ -19,6 +19,13 @@ class PlantsController < ApplicationController
     erb :'/plants/plant'
   end
 
+  get '/plants' do
+    redirect '/login' if !logged_in?
+    @user = current_user
+    @plants = @user.plants
+    erb :'/plants/all'
+  end
+
   delete '/plants' do
     @plant = exists? if logged_in? && exists? && permission?
 
