@@ -16,7 +16,8 @@ class WaterEventsController < ApplicationController
     @plant = exists? if logged_in? && exists? && permission?
     @plant.water_events.build(params[:wevent])
     @plant.save
-    
+    @plant.calc_water_schedule if @plant.water_schedule?
+
     flash[:message] = "Water event created successfully"
     redirect "/plants/#{params[:id]}"
   end

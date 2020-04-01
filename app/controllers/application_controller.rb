@@ -41,6 +41,11 @@ class ApplicationController < Sinatra::Base
   post '/login' do
     if @user = User.find_by(username: params[:username]).try(:authenticate, params[:password])
       session[:uid] = @user.id 
+      @user.plants.each do |plant|
+        plant.calc_water_schedule if plant.water_schedule?
+        plant.save
+      end
+
       redirect '/home'
     else
       flash[:message] = "Invalid login credentials. Please try again."

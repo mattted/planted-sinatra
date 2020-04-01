@@ -5,8 +5,12 @@ class Plant < ActiveRecord::Base
   has_many :fert_events
 
   def calc_water_schedule
-    self.water = "whoops"
+    dates = self.water_events.all.map{ |ev| ev.date }.sort
+    diff = Array.new
 
+    dates.each_with_index{ |d, i| diff << d - dates[i -1] if i != 0 }
+    avg = diff.inject(:+).to_f / (diff.size - 1)
+    self.water = avg.round(2)
   end
 
   def water_schedule?
