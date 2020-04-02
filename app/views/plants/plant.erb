@@ -1,24 +1,39 @@
 <div class="card">
-  <div class="card-links">
-    <a href="/plants/<%= @plant.id.to_s %>/edit">Edit Plant</a>
-    <a href="/plants/<%= @plant.id.to_s %>/delete">Delete Plant</a>
-    <a href="/plants/<%=@plant.id.to_s %>/new-water-event">New Water Event</a>
-  </div>
-  <h2><%= @plant.name %></h2>
-  <h4><%= flash[:message] %></h4>
-  <div>
-    <div class="content">
-      <%# TODO: Add water/fert helpers to say if/when it is tracked %>
-      <span>Common Name: <%= @plant.cname %></span><br>
-      <span>Scientific Name: <%= @plant.sci_name %></span><br>
-      <span>Water Notification: <%= @plant.due_in_on %></span><br>
-      <span>Water By Date: <%= @plant.water_due %></span><br>
-      <span>Water Schedule: <%= @plant.water_avg %> days</span><br>
-      <span>Fertilizer: <%= @plant.fert %></span><br>
-      <span>Lighting Needs: <%= @plant.light %></span><br>
-      <span>Preferred Humidity: <%= @plant.humidity %></span><br>
-      <br>
+  <h4 class="flash"><%= flash[:message] %></h4>
+  <h4 class="card-header"><%= @plant.name %></h4>
+  <div class="card-grid-two">
+    <div class="grid-item">   
+      <p><strong>Common Name</strong></p>
+      <p class="card-info"><%= @plant.cname %></p>
+      <p><strong>Scientific Name</strong></p>
+      <p class="card-info"><%= @plant.sci_name %></p>
+      <p><strong>Date Acquired/Planted</strong></p>
+      <p class="card-info"><%= @plant.date %></p>
+      <p><strong>Preferred Lighting</strong></p>
+      <p class="card-info"><%= @plant.light %></p>
+      <p><strong>Preferred Humidity</strong></p>
+      <p class="card-info"><%= @plant.humidity %></p>
     </div>
 
+    <div class="grid-item">   
+      <p><strong>Water Average</strong></p>
+      <p class="card-info"><%= @plant.water_avg %> days</p>
+      <p><strong>Last Water Date</strong></p>
+      <p class="card-info"><%= @plant.water_due %></p>
+      <p><strong>Water Due</strong></p>
+      <p class="card-info"><%= @plant.due_in_on %></p>
+      <p><strong>Created</strong></p>
+      <p class="card-info"><%= @plant.updated_at %></p>
+      <p><strong>Last Updated</strong></p>
+      <p class="card-info"><%= @plant.updated_at %></p>
+    </div>
   </div>
+
+  <div class="card-links" style="text-align:center">
+    <br>
+    <a href="/plants/<%= @plant.id.to_s %>/edit">edit</a>
+    <a href="/plants/<%= @plant.id.to_s %>/delete">delete</a>
+    <a href="/plants/<%=@plant.id.to_s %>/new-water-event">water</a>
+  </div>
+  <%# <h4 class="end-line"></h4> %>
 </div>

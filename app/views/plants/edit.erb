@@ -1,55 +1,55 @@
-<a href="/home">Home</a>
-<h2>Edit Plant</h2>
-<h4><%= flash[:message] %></h4>
-<form action="/plants" method="post">
-  <input type="hidden" id="hidden" name="_method" value="patch">
-  <input type="hidden" id="hidden" name="id" value="<%=@plant.id%>">
-  <label for="name">Name: </label><br>
-  <input type="text" id="name" name="plant[name]" value="<%=@plant.name%>" required>
-  <br>
-  <label for="cname">Common Name: </label><br>
-  <input type="text" id="cname" name="plant[cname]" value="<%=@plant.cname if !@plant.cname.nil?%>">
-  <br>
-  <label for="sci_name">Scientific Name: </label><br>
-  <input type="text" id="sci_name" name="plant[sci_name]" value="<%=@plant.sci_name if !@plant.sci_name.nil?%>">
-  <br>
-  <label for="date">Date Planted/Acquired: </label><br>
-  <input type="date" id="date" name="plant[date]" value=<%=@plant.date%> required>
-  <br>
-  <label for="water_track">Use Planted set an average watering schedule?: </label><br>
-  <select id="water_track" name="plant[water_track]" required>
-    <option <%='selected="selected"' if @plant.water_track %> value="true">Yes</option>
-    <option <%='selected="selected"' if !@plant.water_track %> value="false">No</option>
-  </select>
-  <br>
-  <label for="water">Initial Water Schedule (days): </label><br>
-  <input type="text" id="water" name="plant[water_avg]" value=<%=@plant.water_avg%> required>
-  <br>
-  <label for="fert_track">Use Planted to track and set fertilizer schedule?: </label><br>
-  <select id="fert_track" name="plant[fert_track]" required>
-    <option <%='selected="selected"' if @plant.fert_track %> value="true">Yes</option>
-    <option <%='selected="selected"' if !@plant.fert_track %> value="false">No</option>
-  </select>
-  <br>
-  <label for="fert">Initial Fertilizer Schedule (days): </label><br>
-  <input type="text" id="fert" name="plant[fert]" value=<%=@plant.fert%> required>
-  <br>
-  <label for="light">Light Needs: </label><br>
-  <select id="light" name="plant[light]" required>
-    <option <%='selected="selected"' if @plant.light == "Low" %> value="Low">Low</option>
-    <option <%='selected="selected"' if @plant.light == "Medium" %> value="Medium">Medium</option>
-    <option <%='selected="selected"' if @plant.light == "High" %> value="High">High</option>
-    <option <%='selected="selected"' if @plant.light == "Very High" %> value="Very High">Very High</option>
-  </select>
-  <br>
-  <label for="humidity">Humidity Needs: </label><br>
-  <select id="humidity" name="plant[humidity]">
-    <option <%='selected="selected"' if @plant.humidity == "Low" %> value="Low">Low</option>
-    <option <%='selected="selected"' if @plant.humidity == "Medium" %> value="Medium">Medium</option>
-    <option <%='selected="selected"' if @plant.humidity == "High" %> value="High">High</option>
-    <option <%='selected="selected"' if @plant.humidity == "Very High" %> value="Very High">Very High</option>
-  </select>
-  <br><br>
-  <input type="submit" value="Save">
-</form>
-
+<h4 class="flash"><%= flash[:message] %></h4>
+<div class="card">
+  <h4 class="card-header-form">Edit Plant</h4>
+  <form action="/plants" method="post">
+    <input type="hidden" id="hidden" name="_method" value="patch">
+    <input type="hidden" id="hidden" name="id" value="<%=@plant.id%>">
+    <label for="name">Name: </label><br>
+    <input type="text" id="name" name="plant[name]" value="<%=@plant.name%>" required>
+    <br>
+    <label for="cname">Common Name: </label><br>
+    <input type="text" id="cname" name="plant[cname]" value="<%=@plant.cname if !@plant.cname.nil?%>">
+    <br>
+    <label for="sci_name">Scientific Name: </label><br>
+    <input type="text" id="sci_name" name="plant[sci_name]" value="<%=@plant.sci_name if !@plant.sci_name.nil?%>">
+    <br>
+    <label for="date">Date Planted/Acquired: </label><br>
+    <input type="date" id="date" name="plant[date]" value=<%=@plant.date%> required>
+    <br>
+    <label for="water_track">Use Planted set an average watering schedule?: </label><br>
+    <select id="water_track" name="plant[water_track]" required>
+      <option <%='selected="selected"' if @plant.water_track %> value="true">Yes</option>
+      <option <%='selected="selected"' if !@plant.water_track %> value="false">No</option>
+    </select>
+    <br>
+    <label for="water">Initial Water Schedule (days): </label><br>
+    <input type="text" id="water" name="plant[water_avg]" value=<%=@plant.water_avg%> required>
+    <br>
+    <label for="fert_track">Use Planted to track and set fertilizer schedule?: </label><br>
+    <select id="fert_track" name="plant[fert_track]" required>
+      <option <%='selected="selected"' if @plant.fert_track %> value="true">Yes</option>
+      <option <%='selected="selected"' if !@plant.fert_track %> value="false">No</option>
+    </select>
+    <br>
+    <label for="fert">Initial Fertilizer Schedule (days): </label><br>
+    <input type="text" id="fert" name="plant[fert]" value=<%=@plant.fert%> required>
+    <br>
+    <label for="light">Light Needs: </label><br>
+    <select id="light" name="plant[light]" required>
+      <option <%='selected="selected"' if @plant.light == "Low" %> value="Low">Low</option>
+      <option <%='selected="selected"' if @plant.light == "Medium" %> value="Medium">Medium</option>
+      <option <%='selected="selected"' if @plant.light == "High" %> value="High">High</option>
+      <option <%='selected="selected"' if @plant.light == "Very High" %> value="Very High">Very High</option>
+    </select>
+    <br>
+    <label for="humidity">Humidity Needs: </label><br>
+    <select id="humidity" name="plant[humidity]">
+      <option <%='selected="selected"' if @plant.humidity == "Low" %> value="Low">Low</option>
+      <option <%='selected="selected"' if @plant.humidity == "Medium" %> value="Medium">Medium</option>
+      <option <%='selected="selected"' if @plant.humidity == "High" %> value="High">High</option>
+      <option <%='selected="selected"' if @plant.humidity == "Very High" %> value="Very High">Very High</option>
+    </select>
+    <br><br>
+    <input type="submit" value="Save">
+  </form>
+</div>

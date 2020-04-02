@@ -22,7 +22,7 @@ class PlantsController < ApplicationController
   get '/plants' do
     redirect '/login' if !logged_in?
     @user = current_user
-    @plants = @user.plants
+    @plants = @user.plants.sort_by(&:name)
     erb :'/plants/all'
   end
 
@@ -41,6 +41,9 @@ class PlantsController < ApplicationController
   patch '/plants' do
     @plant = exists? if logged_in? && exists? && permission?
     @plant.update(params[:plant])
+    @plant.calc_avg_water_schedule if @plant.water_avg?
+    @plant.set_water_due_date
+    @plant.save
     flash[:message] = "Plant successfully edited"
     redirect "/plants/#{@plant.id}"
   end
@@ -49,6 +52,10 @@ class PlantsController < ApplicationController
     @user = current_user
     @plant = @user.plants.build(params[:plant])
     @user.save
+
+    @plant.calc_avg_water_schedule if @plant.water_avg?
+    @plant.set_water_due_date
+    @plant.save
 
     flash[:message] = "Plant created"
     redirect "/plants/#{@plant.id}"

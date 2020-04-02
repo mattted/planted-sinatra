@@ -4,6 +4,7 @@
 
 body {
   font-family: mono;
+  font-size: 0.75rem;
   color: #4c566a;
   padding: 10px;
   /* background: #eceff4; */
@@ -24,6 +25,11 @@ body {
   text-align: center;
   padding: 0px 16px;
   text-decoration: none;
+}
+
+.flash {
+  color: #bf616a;
+  font-size: 0.8rem;
 }
 
 .topnav {
@@ -54,6 +60,10 @@ body {
   padding-bottom: 25px;
 }
 
+.grid-item h4 {
+  font-size: 0.9rem 
+}
+
 .card a {
   text-decoration: underline overline;
   color: #bf616a;
@@ -67,7 +77,21 @@ body {
 .card-header {
   text-align: center;
   padding-bottom: 15px;
-  border-bottom: 1px solid #81a1c1;
+  border-bottom: 1px solid #4c566a;
+  margin-bottom: 0px;
+  font-size: 1.1rem;
+}
+
+.card-header-form {
+  padding-bottom: 15px;
+  margin-bottom: 0px;
+  font-size: 1.1rem;
+}
+
+.end-line {
+  text-align: center;
+  padding-bottom: 15px;
+  border-top: 1px solid #4c566a;
   margin-bottom: 0px;
 }
 
@@ -78,6 +102,13 @@ body {
 .card-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.card-grid-two {
+  display: grid;
+  margin: auto;
+  grid-template-columns: 1fr 1fr;
+  width: 50%;
 }
 
 .grid-item {
@@ -118,6 +149,54 @@ body {
 
 .card-table-links {
   text-align: center;
+}
+
+input[type=text] {
+  font-size: 0.75rem;
+  width: 30%;
+  /* margin: 8px 0; */
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  border: none;
+  /* border-bottom: 1px solid #81a1c1; */
+  border-bottom: 1px solid #4c566a;
+  color: #81a1c1;
+}
+
+input[type=date] {
+  font-size: 0.75rem;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  border: none;
+  border-bottom: 1px solid #4c566a;
+  color: #bf616a;
+}
+
+select {
+  font-size: 0.75rem;
+  margin-bottom: 20px;
+  color: #bf616a;
+  /* color: #8fbcbb; */
+  background-color: white;
+  border: none;
+  border-bottom: 1px solid #4c566a;
+  padding: 3px 10px;
+  text-align: left;
+  -webkit-appearance: none;
+}
+
+label {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+input[type=submit] {
+  background-color: #4c566a;
+  color: white;
+  padding: 5px 10px;
+  border: none;
 }
 
 .row:after {

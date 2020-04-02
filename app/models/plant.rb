@@ -21,6 +21,8 @@ class Plant < ActiveRecord::Base
     if self.water_events.count > 0
       most_recent = self.water_events.sort_by(&:date).reverse.first.date      
       self.water_due = most_recent + water_avg 
+    else
+      self.water_due = self.created_at.to_date + water_avg
     end
   end
 
