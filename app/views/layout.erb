@@ -7,20 +7,26 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <%# <link rel="stylesheet" href="/stylesheets/main.css" /> %>
+    <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
   <body>
-    <div class="wrapper">
+    <div class="header">
       <h1>Planted</h1>
-      <%= "<a href='/signup'>Sign Up</a>" if !logged_in? %>
-      <%= "<a href='/login'>Login</a>" if !logged_in? %>
-      <%= "<a href='/logout'>Logout</a>" if logged_in? %>
-      <br>
-          <%= yield %>
-
-    <footer>
+      <%# <p>some template text</p> %>
+    </div>
+    <div class="topnav">
+      <a href="/home">Home</a>
+      <a href="/plants">Plants</a>
+      <a href="/plants/all/new-water-event">Water Events</a>
+      <%= "<a href='/signup' style='float:right'>Sign Up</a>" if !logged_in? %>
+      <%= "<a href='/login' style='float:right'>Login</a>" if !logged_in? %>
+      <%= "<a href='/logout' style='float:right'>Logout</a>" if logged_in? %>
+    </div>
+    <div class="yield">
+      <%= yield %>
+    </div>
+    <div class="footer">
       <p>This is a FOOOOOTER!!!!</p>
-    </footer>
     </div>
 
   </body>

@@ -1,42 +1,37 @@
-<div class="container">
-  <h3>Home: <%= @user.username %></h3>
-  <a href="/plants">View All Plants</a>
-  <a href="/plants/new">Add New Plant</a>
-  <a href="/plants/new-water-event">Water Plants</a>
-  <div>
-    <div class="content">
-      <h4><%= flash[:message] %></h4>
-      <div>
-        <h4>Recently Added / Updated Plants</h4>
-        <% @rec_plants.each do |plant| %>
-          <div>   
-            <h4><%= plant.name %></h4>
-            <ul>
-              <li>Common Name: <%= plant.cname %></li>
-              <li>Scientific Name:<%= plant.sci_name %></li>
-              <li>Date Acquired/Planted: <%= plant.date %></li>
-            </ul>
-            <a href="/plants/<%=plant.id%>/edit">Edit</a>
-          </div>
-        <% end %>
-      </div>
-
-      <div>
-        <h4>Due or Overdue For Watering</h4>
-        <%# TODO: Verify overdue_plants nil? or empty? %>
-        <span><%= "No plants due/overdue..." if @overdue_plants.nil? %></span>
-        <% @overdue_plants.each do |plant| %>
-          <div>   
-            <h4><%= plant.name %></h4>
-            <ul>
-              <li><%= plant.due_in_on %></li>
-              <li>Water Date: <%= plant.water_due %></li>
-            </ul>
-            <a href="/plants/<%=plant.id%>/edit">Edit</a>
-          </div>
-        <% end %>
+<h4><%= flash[:message] %></h4>
+<div class="card">
+  <h3>Recently Added / Updated Plants</h3>
+  <div class="card-grid">
+  <% @rec_plants.each do |plant| %>
+    <div class="grid-item">   
+      <h4 style='text-align:center'><%= plant.name %></h4>
+      <p><strong>Common Name:</strong></p>
+      <p><%= plant.cname %></p>
+      <p><strong>Scientific Name</strong></p>
+      <p><%= plant.sci_name %></p>
+      <p><strong>Date Acquired/Planted:</strong></p>
+      <p><%= plant.date %></p>
+      <div class="card-links">
+        <a href="/plants/<%=plant.id%>/edit" class="card-links">Edit</a>
       </div>
     </div>
-
+  <% end %>
   </div>
+</div>
+
+<div class="card">
+  <h3>Due/Overdue for Watering</h3>
+  <div class="card-grid">
+    <% @overdue_plants.each do |plant| %>
+      <div class="grid-item">   
+        <h4 style="text-align:center"><%= plant.name %></h4>
+        <li><%= plant.due_in_on %></li>
+        <li>Water Date: <%= plant.water_due %></li>
+        <div class="card-links">
+          <a href="/plants/<%=plant.id%>/edit">Edit</a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
 </div>
