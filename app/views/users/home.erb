@@ -1,35 +1,32 @@
 <h4><%= flash[:message] %></h4>
 <div class="card">
-  <h3>Recently Added / Updated Plants</h3>
+  <h4 class="card-header">Recently Added / Updated Plants</h4>
   <div class="card-grid">
   <% @rec_plants.each do |plant| %>
     <div class="grid-item">   
       <h4 style='text-align:center'><%= plant.name %></h4>
-      <p><strong>Common Name:</strong></p>
-      <p><%= plant.cname %></p>
+      <p><strong>Common Name</strong></p>
+      <p class="card-info"><%= plant.cname %></p>
       <p><strong>Scientific Name</strong></p>
-      <p><%= plant.sci_name %></p>
+      <p class="card-info"><%= plant.sci_name %></p>
       <p><strong>Date Acquired/Planted:</strong></p>
-      <p><%= plant.date %></p>
-      <div class="card-links">
-        <a href="/plants/<%=plant.id%>/edit" class="card-links">Edit</a>
-      </div>
+      <p class="card-info"><%= plant.date %></p>
+      <a href="/plants/<%=plant.id%>/edit" class="card-links">edit</a>
     </div>
   <% end %>
   </div>
 </div>
 
 <div class="card">
-  <h3>Due/Overdue for Watering</h3>
+  <h4 class="card-header">Due/Overdue for Watering</h4>
   <div class="card-grid">
     <% @overdue_plants.each do |plant| %>
       <div class="grid-item">   
         <h4 style="text-align:center"><%= plant.name %></h4>
-        <li><%= plant.due_in_on %></li>
-        <li>Water Date: <%= plant.water_due %></li>
-        <div class="card-links">
-          <a href="/plants/<%=plant.id%>/edit">Edit</a>
-        </div>
+        <p class="card-info"><%= plant.due_in_on %></p>
+        <p><strong>Water Date</strong></p>
+        <p class="card-info"><%= plant.water_due %></p>
+        <a href="/plants/<%=plant.id%>/edit">water</a>
       </div>
     <% end %>
   </div>

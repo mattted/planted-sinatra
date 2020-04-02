@@ -1,13 +1,12 @@
-<div class="container">
-  <a href="/home">Home</a>
-  <a href="/plants/new">Add New Plant</a>
-  <a href="/plants/all/new-water-event">New Water Event</a>
+<h4><%= flash[:message] %></h4>
+<div class="card">
+  <div class="card-table-links">
+    <a href="/plants/new">Add New Plant</a>
+    <a href="/plants/all/new-water-event">New Water Event</a>
+  </div>
 
-  <h2><%= @user.username %>'s Plants</h2>
-  <h4><%= flash[:message] %></h4>
-
-  <div>
-    <div class="content">
+  <h4 class="card-header"><%= @user.username %>'s Plants</h2>
+  <div class="card-table">
       <table>
         <tr>
           <th>Name</th>
@@ -32,7 +31,5 @@
           </tr>
         <% end %>
       </table>
-    </div>
   </div>
-
 </div>

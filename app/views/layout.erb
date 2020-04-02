@@ -10,23 +10,24 @@
     <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
   <body>
-    <div class="header">
-      <h1>Planted</h1>
-      <%# <p>some template text</p> %>
-    </div>
     <div class="topnav">
-      <a href="/home">Home</a>
-      <a href="/plants">Plants</a>
-      <a href="/plants/all/new-water-event">Water Events</a>
-      <%= "<a href='/signup' style='float:right'>Sign Up</a>" if !logged_in? %>
-      <%= "<a href='/login' style='float:right'>Login</a>" if !logged_in? %>
-      <%= "<a href='/logout' style='float:right'>Logout</a>" if logged_in? %>
+      <div class="header">
+        <h1>Planted</h1>
+      </div>
+      <%= "<a href='/signup' style='float:right'>sign up</a>" if !logged_in? %>
+      <%= "<a href='/login' style='float:right'>login</a>" if !logged_in? %>
+      <%= "<a href='/logout' style='float:right'>logout</a>" if logged_in? %>
+      <%= "<a href='/plants/all/new-water-event'>water events</a>" if logged_in? %>
+      <%= "<a href='/plants'>plants</a>" if logged_in? %>
+      <a href="/home">home</a>
     </div>
     <div class="yield">
       <%= yield %>
     </div>
     <div class="footer">
-      <p>This is a FOOOOOTER!!!!</p>
+      <span style='text-decoration:overline'>sinatra project</span><br>
+      <span>planted</span><br>
+      <span>2020</span>
     </div>
 
   </body>
