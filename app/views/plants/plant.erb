@@ -16,7 +16,8 @@
     </div>
 
     <div class="grid-item">   
-      <p><strong>Water Average</strong></p>
+      <%= "<p><strong>Water Average</strong></p>" if @plant.water_track %>
+      <%= "<p><strong>Water Schedule</strong></p>" if !@plant.water_track %>
       <p class="card-info"><%= @plant.water_avg %> days</p>
       <p><strong>Water On</strong></p>
       <p class="card-info"><%= @plant.water_due %></p>

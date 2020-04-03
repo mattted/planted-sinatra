@@ -13,13 +13,13 @@
   <label for="date">Date Planted/Acquired: </label><br>
   <input type="date" id="date" name="plant[date]" required>
   <br>
-  <label for="water_track">Use Planted to track and set water schedule?: </label><br>
+  <label for="water_track">Use Planted to track and set water schedule based on water history?: </label><br>
   <select id="water_track" name="plant[water_track]" required>
     <option value="true">Yes</option>
     <option value="false">No</option>
   </select>
   <br>
-  <label for="water_avg">Initial Water Schedule (days): </label><br>
+  <label for="water_avg">Water Schedule in days:  *if yes was selected above, an average will be used once water events are entered</label><br>
   <input type="text" id="water_avg" name="plant[water_avg]" required>
   <br>
   <label for="fert_track">Use Planted to track and set fertilizer schedule?: </label><br>
