@@ -29,12 +29,29 @@ class WaterEventsController < ApplicationController
 
   get '/plants/:id/new-water-event' do
     @plant = exists? if logged_in? && exists? && permission?
-    erb :'/water_events/new' if logged_in?
+    erb :'/water_events/new'
+  end
+
+  get '/plants/:id/delete-water-event/:wid' do
+    @wevent = wexists? if logged_in? && exists? && wexists? && permission?
+    erb :'/water_events/delete'
+  end
+
+  delete '/plants/water-events' do
+    binding.pry
+    @wevent = wexists? if logged_in? && exists? && wexists? && permission?
+    if params[:delete] == "no"
+      redirect "/plants/#{params[:id]}/water-events"
+    else
+      @wevent.delete
+      flash[:message] = "Water event deleted"
+      redirect "/plants/#{params[:id]}/water-events"
+    end
   end
 
   get '/plants/:id/water-events' do
     @plant = exists? if logged_in? && exists? && permission?
-    @wevents = @plant.water_events
+    @wevents = @plant.water_events.sort_by(&:date).reverse
     
     erb :'/water_events/plant_all'
   end
@@ -79,6 +96,14 @@ class WaterEventsController < ApplicationController
       end
     end
 
+    def wexists?
+      if water = WaterEvent.find_by_id(params[:wid])
+        water
+      else
+        flash[:message] = "No water event with that id in the database"
+        redirect '/home'
+      end
+    end
   end
 
 end

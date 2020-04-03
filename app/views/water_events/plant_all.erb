@@ -1,27 +1,26 @@
 <h4 class="flash"><%= flash[:message] %></h4>
 <div class="card">
 
-  <h4 class="card-header"><%= @user.username %>'s Recent Water Events</h4>
+  <h4 class="card-header">Water Events for <%= @plant.name %></h4>
   <div class="card-table-links">
-    <a href="/water-events/new">new water events</a>
-    <a href="/plants/delete-water-events">delete water events</a>
+    <a href="/plants/<%=@plant.id%>/new-water-event">new water event</a>
   </div>
   <div class="card-table">
       <table>
         <tr>
           <th>Water Date</th>
-          <th>Plant Name</th>
           <th>Water By Date</th>
           <th>Water Notification</th>
           <th>Notes</th>
+          <th>Delete</th>
         </tr>
         <% @wevents.each do |wevent| %>
           <tr>
             <td><%= wevent.date %></td>
-            <td><a href="/plants/<%=wevent.plant.id%>"><%= wevent.plant.name %></a></td>
             <td><%= wevent.plant.water_due %></td>
             <td><%= wevent.plant.due_in_on %></td>
             <td><%= wevent.notes %></td>
+            <td><a class="delete" href="/plants/<%=@plant.id%>/delete-water-event/<%=wevent.id%>">delete</a></td>
           </tr>
         <% end %>
       </table>
