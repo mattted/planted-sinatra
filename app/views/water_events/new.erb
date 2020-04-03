@@ -1,5 +1,5 @@
 <h2>New Water Event for <%=@plant.name%></h2>
-<h4><%= flash[:message] %></h4>
+<h4 class="flash"><%= flash[:message] %></h4>
 <form action="/plants/<%=@plant.id%>/water-events" method="post">
   <label for="date">Date: </label><br>
   <input type="date" id="date" name="wevent[date]" required>

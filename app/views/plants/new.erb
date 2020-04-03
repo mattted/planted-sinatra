@@ -1,5 +1,5 @@
 <h2>New Plant</h2>
-<h4><%= flash[:message] %></h4>
+<h4 class="flash"><%= flash[:message] %></h4>
 <form action="/plants" method="post">
   <label for="name">Name: </label><br>
   <input type="text" id="name" name="plant[name]" required>
