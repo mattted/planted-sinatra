@@ -226,7 +226,7 @@ body {
   text-align: center;
 }
 
-input[type=text] {
+input[type=text], input[type=password], input[type=email] {
   font-size: 0.75rem;
   width: 30%;
   /* margin: 8px 0; */

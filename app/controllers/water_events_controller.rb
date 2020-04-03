@@ -74,7 +74,7 @@ class WaterEventsController < ApplicationController
     
     def logged_in?
       if !session[:uid]
-        flash[:message] = "Must be logged in to add water events"
+        flash[:message] = "Must be logged in to add or view water events"
         redirect "/login"
       else
         !!session[:uid]

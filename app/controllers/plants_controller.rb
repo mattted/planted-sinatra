@@ -65,7 +65,7 @@ class PlantsController < ApplicationController
     
     def logged_in?
       if !session[:uid]
-        flash[:message] = "Must be logged in to add plants"
+        flash[:message] = "Must be logged in to add or view plants"
         redirect "/login"
       else
         !!session[:uid]

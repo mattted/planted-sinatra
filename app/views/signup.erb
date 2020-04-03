@@ -1,5 +1,5 @@
 <h2>Signup</h2><br>
-<h4><%= flash[:message] %></h4>
+<h4 class="flash"><%= flash[:message] %></h4>
 <form action="/signup" method="post">
   <label for="email">Email: </label><br>
   <input type="email" id="email" name="user[email]" required>
