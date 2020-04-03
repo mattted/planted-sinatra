@@ -4,10 +4,10 @@
   <h4 class="card-header"><%= @user.username %>'s Plants</h2>
   <div class="card-table-links">
     <a href="/plants/new">add plant</a>
-    <a href="/water-events/new">new water event</a>
+    <a href="/water-events/new">water plants</a>
   </div>
   <div class="card-table">
-      <table>
+      <table style="width: 70%">
         <tr>
           <th>Name</th>
           <th>Common Name</th>
@@ -17,6 +17,8 @@
           <th>Humidity</th>
           <th>Water By Date</th>
           <th>Water Notification</th>
+          <th>Edit</th>
+          <th>Delete</th>
         </tr>
         <% @plants.each do |plant| %>
           <tr>
@@ -28,6 +30,8 @@
             <td><%= plant.humidity %></td>
             <td><%= plant.water_due %></td>
             <td><%= plant.due_in_on %></td>
+            <td><a class="tdedit" href="/plants/<%=plant.id%>/edit">edit</a></td>
+            <td><a class="tddelete" href="/plants/<%=plant.id%>/delete">delete</a></td>
           </tr>
         <% end %>
       </table>
