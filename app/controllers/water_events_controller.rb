@@ -1,5 +1,32 @@
 class WaterEventsController < ApplicationController
 
+  get '/water-events' do
+    @user = current_user if logged_in?
+    @wevents = @user.water_events.sort_by(&:date).reverse
+    
+    erb :'/water_events/user_all'
+  end
+
+  post '/water-events' do
+    params[:plants][:pid].each do |id|
+      params[:id] = id
+      @plant = exists? if logged_in? && exists? && permission?
+      @plant.water_events.build(params[:wevent])
+      @plant.calc_avg_water_schedule if @plant.water_avg?
+      @plant.set_water_due_date
+      @plant.save
+    end
+
+    redirect '/water-events'
+  end
+
+  get '/water-events/new' do
+    @user = current_user if logged_in?
+    @plants = @user.plants.sort_by(&:water_due)
+
+    erb :'/water_events/new_many'
+  end
+
   get '/plants/:id/new-water-event' do
     @plant = exists? if logged_in? && exists? && permission?
     erb :'/water_events/new' if logged_in?
@@ -9,7 +36,7 @@ class WaterEventsController < ApplicationController
     @plant = exists? if logged_in? && exists? && permission?
     @wevents = @plant.water_events
     
-    erb :'/water_events/all'
+    erb :'/water_events/plant_all'
   end
 
   post '/plants/:id/water-events' do

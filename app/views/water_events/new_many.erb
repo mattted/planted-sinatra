@@ -1,0 +1,22 @@
+<h4 class="flash"><%= flash[:message] %></h4>
+<form action='/water-events' method='post'>
+  <div class="card">
+    <h4 class="card-header">Add Water Events</h4>
+    <div class="water-all-date">
+      <label for="date">Water Date</label><br>
+      <input type="date" id="date" name="wevent[date]" required><br>
+      <label for="date">Notes</label><br>
+      <input type="text" id="notes" name="wevent[notes]"><br>
+      <input type="submit" value="submit">
+    </div>
+    <div class="card-grid-seven">
+        <% @plants.each do |plant| %>
+          <div class="grid-item">   
+            <strong><p class="card-info-selection"><%= plant.name %></p></strong>
+            <p class="card-info-selection" style="color: #81a1c1"><%= plant.due_in_on %></p>
+            <input type=checkbox name=plants[pid][] value="<%=plant.id%>">
+          </div>
+        <% end %>
+    </div>
+  </div>
+</form>

@@ -42,14 +42,21 @@ body {
   font-size: 0.85rem;
   float: right;
   display: block;
-  color: #3b4252;
+  /* color: #3b4252; */
+  background-color: #3b4252;
+  color: white;
   text-align: center;
-  padding: 34px 16px;
-  text-decoration: underline overline;
+  margin: 34px 16px;
+  padding: 5px;
+  /* text-decoration: underline overline; */
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 3px;
 }
 
 .topnav a:hover {
-  color: #81a1c1;
+  /* color: #81a1c1; */
+  background-color: #81a1c1;
 }
 
 .card {
@@ -61,23 +68,43 @@ body {
 }
 
 .grid-item h4 {
-  font-size: 0.9rem 
+  font-size: 0.9rem;
+}
+
+.grid-item h4 a {
+  font-size: 0.9rem ;
+  background: none;
+  text-decoration: underline;
+  color: #4c566a;
+}
+
+.grid-item h4 a:hover {
+  font-weight: bold;
+  border: none;
+  color: #81a1c1;
 }
 
 .card a {
-  text-decoration: underline overline;
-  color: #bf616a;
+  /* text-decoration: underline overline; */
+  text-decoration: none;
+  background-color: #8fbcbb;
+  /* color: #bf616a; */
+  padding: 3px;
+  border-radius: 3px;
+  color: white;
+  font-weight: bold;
   font-size: 0.75rem;
 }
 
 .card a:hover {
-  font-weight: bold;
+  /* background-color: #a3be8c; */
+  border: 1px solid #4c566a;
 }
 
 .card-header {
   text-align: center;
   padding-bottom: 15px;
-  border-bottom: 1px solid #4c566a;
+  /* border-bottom: 1px solid #4c566a; */
   margin-bottom: 0px;
   font-size: 1.1rem;
 }
@@ -104,6 +131,21 @@ body {
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
+.card-grid-six {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.card-grid-seven {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.card-grid-five {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
 .card-grid-two {
   display: grid;
   margin: auto;
@@ -126,8 +168,12 @@ body {
 
 .card-table th {
   vertical-align: middle;
+  font-weight: bold;
   padding: 5px;
-  padding-top: 20px;
+  margin-top: 20px;
+  border-top: 1px solid #4c566a;
+  border-bottom: 1px solid #4c566a;
+  border-radius: 3px;
 }
 
 .card-table td {
@@ -140,14 +186,32 @@ body {
 }
 
 .card-table tr:nth-child(even) a{
-  color: #81a1c1
+  color: #81a1c1;
 }
 
 .card-table tr:nth-child(odd) a{
-  color: #4c566a
+  color: #4c566a;
+}
+
+.card-table tr a {
+  font-weight: normal;
+  background: none;
+  text-decoration: underline;
+}
+
+.card-table tr a:hover {
+  font-weight: bold;
+  background: none;
 }
 
 .card-table-links {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.water-all-date {
+  width: 25%;
+  margin: auto;
   text-align: center;
 }
 
@@ -193,12 +257,17 @@ label {
 }
 
 input[type=submit] {
-  background-color: #4c566a;
+  background-color: #8fbcbb;
   color: white;
-  padding: 5px 10px;
+  padding: 3px 10px;
   border: none;
+  border-radius: 3px;
+  font-weight: bold;
 }
 
+input[type=submit]:hover {
+  border: 1px solid #4c566a;
+}
 .row:after {
   content: "";
   display: table;

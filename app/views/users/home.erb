@@ -4,7 +4,7 @@
   <div class="card-grid">
   <% @rec_plants.each do |plant| %>
     <div class="grid-item">   
-      <h4 style='text-align:center'><%= plant.name %></h4>
+      <h4 style='text-align:center'><a href="/plants/<%=plant.id%>"><%= plant.name %></a></h4>
       <p><strong>Common Name</strong></p>
       <p class="card-info"><%= plant.cname %></p>
       <p><strong>Scientific Name</strong></p>
@@ -24,7 +24,7 @@
   <div class="card-grid">
     <% @overdue_plants.each do |plant| %>
       <div class="grid-item">   
-        <h4 style="text-align:center"><%= plant.name %></h4>
+        <h4 style='text-align:center'><a href="/plants/<%=plant.id%>"><%= plant.name %></a></h4>
         <p class="card-info"><%= plant.due_in_on %></p>
         <p><strong>Water Date</strong></p>
         <p class="card-info"><%= plant.water_due %></p>
