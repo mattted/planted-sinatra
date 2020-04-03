@@ -110,6 +110,16 @@ body {
   font-size: 1.1rem;
 }
 
+.card-header a{
+  text-align: center;
+  padding-bottom: 15px;
+  color: #4c566a;
+  background: none;
+  margin-bottom: 0px;
+  font-size: 1.1rem;
+  text-decoration: underline;
+}
+
 .card-header-form {
   padding-bottom: 15px;
   margin-bottom: 0px;

@@ -12,9 +12,9 @@ class WaterEventsController < ApplicationController
       params[:id] = id
       @plant = exists? if logged_in? && exists? && permission?
       @plant.water_events.build(params[:wevent])
+      @plant.save
       @plant.calc_avg_water_schedule if @plant.water_avg?
       @plant.set_water_due_date
-      @plant.save
     end
 
     redirect '/water-events'
@@ -38,12 +38,15 @@ class WaterEventsController < ApplicationController
   end
 
   delete '/plants/water-events' do
-    binding.pry
     @wevent = wexists? if logged_in? && exists? && wexists? && permission?
     if params[:delete] == "no"
       redirect "/plants/#{params[:id]}/water-events"
     else
       @wevent.delete
+      @plant = exists? if logged_in? && exists? && permission?
+      @plant.calc_avg_water_schedule if @plant.water_avg?
+      @plant.set_water_due_date
+
       flash[:message] = "Water event deleted"
       redirect "/plants/#{params[:id]}/water-events"
     end
@@ -59,9 +62,9 @@ class WaterEventsController < ApplicationController
   post '/plants/:id/water-events' do
     @plant = exists? if logged_in? && exists? && permission?
     @plant.water_events.build(params[:wevent])
+    @plant.save
     @plant.calc_avg_water_schedule if @plant.water_avg?
     @plant.set_water_due_date
-    @plant.save
 
     flash[:message] = "Water event created successfully"
     redirect "/plants/#{params[:id]}"

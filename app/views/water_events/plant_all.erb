@@ -1,7 +1,7 @@
 <h4 class="flash"><%= flash[:message] %></h4>
 <div class="card">
 
-  <h4 class="card-header">Water Events for <%= @plant.name %></h4>
+  <h4 class="card-header">Water Events for <a href="/plants/<%= @plant.id %>"><%= @plant.name %></a></h4>
   <div style="text-align: center">
     <p><strong><%= @plant.due_in_on %></strong></p>
     <p class="card-info"><%= @plant.water_due %></p>
