@@ -2,23 +2,23 @@
 <div class="card">
 
   <h4 class="card-header">Water Events for <%= @plant.name %></h4>
+  <div style="text-align: center">
+    <p><strong><%= @plant.due_in_on %></strong></p>
+    <p class="card-info"><%= @plant.water_due %></p>
+  </div>
   <div class="card-table-links">
     <a href="/plants/<%=@plant.id%>/new-water-event">new water event</a>
   </div>
   <div class="card-table">
-      <table>
+      <table style="width: 40%">
         <tr>
           <th>Water Date</th>
-          <th>Water By Date</th>
-          <th>Water Notification</th>
           <th>Notes</th>
           <th>Delete</th>
         </tr>
         <% @wevents.each do |wevent| %>
           <tr>
             <td><%= wevent.date %></td>
-            <td><%= wevent.plant.water_due %></td>
-            <td><%= wevent.plant.due_in_on %></td>
             <td><%= wevent.notes %></td>
             <td><a class="delete" href="/plants/<%=@plant.id%>/delete-water-event/<%=wevent.id%>">delete</a></td>
           </tr>
