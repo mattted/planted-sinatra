@@ -3,7 +3,8 @@
 }
 
 body {
-  font-family: mono;
+  font-family: monospace;
+  /* font-family: 'JetBrainsMono', monospace; */
   font-size: 0.75rem;
   color: #4c566a;
   padding: 10px;
@@ -373,4 +374,24 @@ input[type=submit]:hover {
     width: 100%;
   }
 }
+
+/* @font-face{ */
+/*   font-family: 'JetBrainsMono'; */
+/*   src: url('.woff2') format('woff2'), */
+/*     url('./jbm/web/woff2/JetBrainsMono-Regular.woff2') format('woff'), */
+/*     url('./jbm/web/woff/JetBrainsMono-Regular.woff') format('woff'), */
+/*     url('./jbm/ttf/JetBrainsMono-Regular.ttf') format('truetype'); */
+/*   /1* font-weight: 400; *1/ */
+/*   font-style: normal; */
+/* } */
+
+/* @font-face{ */
+/*   font-family: 'JetBrainsMono'; */
+/*   src: url('.woff2') format('woff2'), */
+/*     url('./jbm/web/woff2/JetBrainsMono-Bold.woff2') format('woff'), */
+/*     url('./jbm/web/woff/JetBrainsMono-Bold.woff') format('woff'), */
+/*     url('./jbm/ttf/JetBrainsMono-Bold.ttf') format('truetype'); */
+/*   /1* font-weight: 400; *1/ */
+/*   font-style: bold; */
+/* } */
 
