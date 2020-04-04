@@ -11,7 +11,6 @@ userone = User.all.first
 usertwo = User.all.last
 csv.each_with_index do |row, i|
   if i <= 30
-    binding.pry
     hash = row.to_hash
     hash["date"] = (hash["date"] + " 2019").to_date
     # hash["date"] = hash["date"].to_date
