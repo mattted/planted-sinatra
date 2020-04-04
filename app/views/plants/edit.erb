@@ -23,7 +23,7 @@
     </select>
     <br>
     <label for="water_avg">Water Schedule in days:  *if yes was selected above, an average will be used once water events are entered</label><br>
-    <input type="number" id="water" name="plant[water_avg]" value=<%=@plant.water_avg%> required>
+    <input type="number" id="water" name="plant[water_avg]" step="0.01" value=<%=@plant.water_avg%> required>
     <br>
     <label for="fert_track">Use Planted to track and set fertilizer schedule based on fertilizer history?:</label><br>
     <select id="fert_track" name="plant[fert_track]" required>
@@ -32,7 +32,7 @@
     </select>
     <br>
     <label for="fert">Fertilizer Schedule in days:  *if yes was selected above, an average will be used once fertilizer events are entered</label><br>
-    <input type="text" id="fert" name="plant[fert_avg]" value=<%=@plant.fert_avg%> required>
+    <input type="text" id="fert" name="plant[fert_avg]" step="0.01" value=<%=@plant.fert_avg%> required>
     <br>
     <label for="light">Light Needs: </label><br>
     <select id="light" name="plant[light]" required>
