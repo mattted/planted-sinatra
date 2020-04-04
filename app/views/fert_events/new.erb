@@ -1,0 +1,12 @@
+<h2>New Fertilizer Event for <%=@plant.name%></h2>
+<h4 class="flash"><%= flash[:message] %></h4>
+<form action="/plants/<%=@plant.id%>/fertilizer-events" method="post">
+  <label for="date">Date: </label><br>
+  <input type="date" id="date" name="fevent[date]" required>
+  <br>
+  <label for="notes">Notes: </label><br>
+  <input type="text" id="notes" name="fevent[notes]">
+  <br><br>
+  <input type="submit" value="Add Fevent Event">
+</form>
+

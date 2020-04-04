@@ -1,0 +1,15 @@
+<h2>Delete Fertilizer Event</h2>
+<h4 class="flash"><%= flash[:message] %></h4>
+<h4>Are you sure you want to delete the fertlizer event for <%=@wevent.plant.name%> from <%=@wevent.date%></h4>
+<form action='/plants/fertilizer-events' method="post">
+  <input type="hidden" id="hidden" name="_method" value="delete">
+  <input type="hidden" id="hidden" name="id" value="<%=@fevent.plant.id%>">
+  <input type="hidden" id="hidden" name="wid" value="<%=@fevent.id%>">
+  <select id="delete" name="delete" required>
+    <option selected='selected' value="no">No</option>
+    <option value="yes">Yes</option>
+  </select>
+  <br><br>
+  <input type="submit" value="Delete">
+</form>
+

@@ -1,0 +1,30 @@
+<h4 class="flash"><%= flash[:message] %></h4>
+<div class="card">
+
+  <h4 class="card-header"><%= @user.username %>'s Recent Fertilizer Events</h4>
+  <div class="card-table-links">
+    <a href="/fertilizer-events/new">fertilize plants</a>
+  </div>
+  <div class="card-table">
+      <table style="width: 50%">
+        <tr>
+          <th>Fertilizer Date</th>
+          <th>Plant Name</th>
+          <th>Fertilize By Date</th>
+          <th>Fertilize Notification</th>
+          <th>Notes</th>
+          <th>Delete</th>
+        </tr>
+        <% @fevents.each do |fevent| %>
+          <tr>
+            <td><%= fevent.date %></td>
+            <td><a href="/plants/<%=fevent.plant.id%>"><%= fevent.plant.name %></a></td>
+            <td><%= fevent.plant.fert_due %></td>
+            <td><%= fevent.plant.fdue_in_on %></td>
+            <td><%= fevent.notes %></td>
+            <td><a class="tddelete" href="/plants/<%=fevent.plant.id%>/delete-fertilizer-event/<%=fevent.id%>">delete</a></td>
+          </tr>
+        <% end %>
+      </table>
+  </div>
+</div>
