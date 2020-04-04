@@ -3,7 +3,7 @@
   <h4 class="card-header">Recently Added / Updated Plants</h4>
   <div class="card-grid">
   <% @rec_plants.each do |plant| %>
-    <div class="grid-item">   
+    <div class="grid-item-space">   
       <h4 style='text-align:center'><a href="/plants/<%=plant.id%>"><%= plant.name %></a></h4>
       <p><strong>Common Name</strong></p>
       <p class="card-info"><%= plant.cname %></p>
@@ -23,7 +23,7 @@
   <h4 class="card-header">Due/Overdue for Watering</h4>
   <div class="card-grid">
     <% @overdue_plants.each do |plant| %>
-      <div class="grid-item">   
+      <div class="grid-item-space">   
         <h4 style='text-align:center'><a href="/plants/<%=plant.id%>"><%= plant.name %></a></h4>
         <p class="card-info"><%= plant.due_in_on %></p>
         <p><strong>Water Date</strong></p>
@@ -38,7 +38,7 @@
   <h4 class="card-header">Due/Overdue for Fertilizer</h4>
   <div class="card-grid">
     <% @fert_overdue_plants.each do |plant| %>
-      <div class="grid-item">   
+      <div class="grid-item-space">   
         <h4 style='text-align:center'><a href="/plants/<%=plant.id%>"><%= plant.name %></a></h4>
         <p class="card-info"><%= plant.fdue_in_on %></p>
         <p><strong>Fertilizer Date</strong></p>

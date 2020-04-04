@@ -71,6 +71,10 @@ body {
   font-size: 0.9rem;
 }
 
+.grid-item-space h4 {
+  font-size: 0.9rem;
+}
+
 .grid-item h4 a {
   font-size: 0.9rem ;
   background: none;
@@ -79,6 +83,19 @@ body {
 }
 
 .grid-item h4 a:hover {
+  font-weight: bold;
+  border: none;
+  color: #81a1c1;
+}
+
+.grid-item-space h4 a {
+  font-size: 0.9rem ;
+  background: none;
+  text-decoration: underline;
+  color: #4c566a;
+}
+
+.grid-item-space h4 a:hover {
   font-weight: bold;
   border: none;
   color: #81a1c1;
@@ -138,8 +155,11 @@ body {
 }
 
 .card-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  /* display: grid; */
+  /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
 }
 
 .card-grid-six {
@@ -169,6 +189,12 @@ body {
   margin: auto;
   grid-template-columns: 1fr 1fr;
   width: 50%;
+}
+
+.grid-item-space {
+  padding: 15px;
+  text-align: center;
+  font-size: 0.75rem;
 }
 
 .grid-item {
