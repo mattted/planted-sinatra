@@ -42,7 +42,9 @@ class PlantsController < ApplicationController
     @plant = exists? if logged_in? && exists? && permission?
     @plant.update(params[:plant])
     @plant.calc_avg_water_schedule if @plant.water_avg?
+    @plant.calc_avg_fert_schedule if @plant.fert_avg?
     @plant.set_water_due_date
+    @plant.set_fert_due_date
     @plant.save
     flash[:message] = "Plant successfully edited"
     redirect "/plants/#{@plant.id}"
@@ -54,7 +56,9 @@ class PlantsController < ApplicationController
     @user.save
 
     @plant.calc_avg_water_schedule if @plant.water_avg?
+    @plant.calc_avg_fert_schedule if @plant.fert_avg?
     @plant.set_water_due_date
+    @plant.set_fert_due_date
     @plant.save
 
     flash[:message] = "Plant created"
