@@ -2,7 +2,7 @@
 <h4 class="flash"><%= flash[:message] %></h4>
 <form action="/plants/<%=@plant.id%>/water-events" method="post">
   <label for="date">Date: </label><br>
-  <input type="date" id="date" name="wevent[date]" required>
+  <input type="date" max="<%=DateTime.now.to_date.to_s%>" id="date" name="wevent[date]" required>
   <br>
   <label for="notes">Notes: </label><br>
   <input type="text" id="notes" name="wevent[notes]">

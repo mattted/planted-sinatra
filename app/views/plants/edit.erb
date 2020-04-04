@@ -14,25 +14,25 @@
     <input type="text" id="sci_name" name="plant[sci_name]" value="<%=@plant.sci_name if !@plant.sci_name.nil?%>">
     <br>
     <label for="date">Date Planted/Acquired: </label><br>
-    <input type="date" id="date" name="plant[date]" value=<%=@plant.date%> required>
+    <input type="date" id="date" max="<%=DateTime.now.to_date.to_s%>" name="plant[date]" value=<%=@plant.date%> required>
     <br>
-    <label for="water_track">Use Planted to track and set water schedule based on water history?: </label><br>
+    <label for="water_track">Use Planted to track and set water schedule based on water history?:</label><br>
     <select id="water_track" name="plant[water_track]" required>
       <option <%='selected="selected"' if @plant.water_track %> value="true">Yes</option>
       <option <%='selected="selected"' if !@plant.water_track %> value="false">No</option>
     </select>
     <br>
     <label for="water_avg">Water Schedule in days:  *if yes was selected above, an average will be used once water events are entered</label><br>
-    <input type="text" id="water" name="plant[water_avg]" value=<%=@plant.water_avg%> required>
+    <input type="number" id="water" name="plant[water_avg]" value=<%=@plant.water_avg%> required>
     <br>
-    <label for="fert_track">Use Planted to track and set fertilizer schedule?: </label><br>
+    <label for="fert_track">Use Planted to track and set fertilizer schedule based on fertilizer history?:</label><br>
     <select id="fert_track" name="plant[fert_track]" required>
       <option <%='selected="selected"' if @plant.fert_track %> value="true">Yes</option>
       <option <%='selected="selected"' if !@plant.fert_track %> value="false">No</option>
     </select>
     <br>
-    <label for="fert">Initial Fertilizer Schedule (days): </label><br>
-    <input type="text" id="fert" name="plant[fert]" value=<%=@plant.fert%> required>
+    <label for="fert">Fertilizer Schedule in days:  *if yes was selected above, an average will be used once fertilizer events are entered</label><br>
+    <input type="text" id="fert" name="plant[fert_avg]" value=<%=@plant.fert_avg%> required>
     <br>
     <label for="light">Light Needs: </label><br>
     <select id="light" name="plant[light]" required>

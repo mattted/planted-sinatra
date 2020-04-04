@@ -233,7 +233,7 @@ body {
   text-align: center;
 }
 
-input[type=text], input[type=password], input[type=email] {
+input[type=text], input[type=password], input[type=email], input[type=number] {
   font-size: 0.75rem;
   width: 30%;
   /* margin: 8px 0; */
@@ -254,6 +254,16 @@ input[type=date] {
   border: none;
   border-bottom: 1px solid #4c566a;
   color: #bf616a;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 select {

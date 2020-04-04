@@ -4,7 +4,7 @@
     <h4 class="card-header">Add Fertilizer Events</h4>
     <div class="water-all-date">
       <label for="date">Fertilizer Date</label><br>
-      <input type="date" id="date" name="fevent[date]" required><br>
+      <input type="date" max="<%=DateTime.now.to_date.to_s%>" id="date" name="fevent[date]" required><br>
       <label for="date">Notes</label><br>
       <input type="text" id="notes" name="fevent[notes]"><br>
       <input type="submit" value="submit">
