@@ -9,6 +9,7 @@ csv = CSV.parse(csv_text, headers: true)
 user = User.find_by(username: "test")
 csv.each do |row|
   hash = row.to_hash
+  binding.pry
   hash["date"] = hash["date"].to_date
   hash["water_avg"] = hash["water_avg"].to_f
   hash["fert"] = hash["fert"].to_f
@@ -19,4 +20,10 @@ csv.each do |row|
     wevent = plant.water_events.build({date: elem.to_date + 145, notes: "seeded water data"})
     plant.save
   end
+ 
+  fert_arr = Array.new(10).map.with_index{ |date, i| DateTime.now.to_date - (rand(1..30) * (i + 1)) }.sort.each do |elem|
+    fevent = plant.fert_events.build({date: elem.to_date, notes: "seeded fertilizer data"})
+    plant.save
+  end
+    
 end
