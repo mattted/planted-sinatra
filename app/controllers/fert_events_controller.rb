@@ -28,7 +28,7 @@ class FertEventsController < ApplicationController
     erb :'/fert_events/new_many'
   end
 
-  get '/plants/:id/new-fert-event' do
+  get '/plants/:id/new-fertilizer-event' do
     @plant = exists? if logged_in? && exists? && permission?
     erb :'/fert_events/new'
   end
@@ -49,7 +49,7 @@ class FertEventsController < ApplicationController
       @plant.set_fert_due_date
 
       flash[:message] = "Fertilizer event deleted"
-      redirect "/plants/#{params[:id]}/fertlizer-events"
+      redirect "/plants/#{params[:id]}/fertilizer-events"
     end
   end
 

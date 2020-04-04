@@ -5,6 +5,7 @@
   <div class="card-table-links">
     <a href="/plants/new">add plant</a>
     <a href="/water-events/new">water plants</a>
+    <a href="/fertilzer-events/new">fertilize plants</a>
   </div>
   <div class="card-table">
       <table style="width: 70%">
@@ -13,10 +14,10 @@
           <th>Common Name</th>
           <th>Scientific Name</th>
           <th>Date Acquired/Planted</th>
-          <th>Lighting</th>
-          <th>Humidity</th>
           <th>Water By Date</th>
           <th>Water Notification</th>
+          <th>Fertilize By Date</th>
+          <th>Fertilizer Notification</th>
           <th>Edit</th>
           <th>Delete</th>
         </tr>
@@ -26,10 +27,10 @@
             <td><%= plant.cname %></td>
             <td><%= plant.sci_name %></td>
             <td><%= plant.date %></td>
-            <td><%= plant.light %></td>
-            <td><%= plant.humidity %></td>
             <td><%= plant.water_due %></td>
             <td><%= plant.due_in_on %></td>
+            <td><%= plant.fert_due %></td>
+            <td><%= plant.fdue_in_on %></td>
             <td><a class="tdedit" href="/plants/<%=plant.id%>/edit">edit</a></td>
             <td><a class="tddelete" href="/plants/<%=plant.id%>/delete">delete</a></td>
           </tr>

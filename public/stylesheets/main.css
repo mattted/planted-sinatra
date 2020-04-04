@@ -157,6 +157,13 @@ body {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
+.card-grid-three {
+  display: grid;
+  margin: auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 50%;
+}
+
 .card-grid-two {
   display: grid;
   margin: auto;

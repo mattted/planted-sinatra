@@ -1,7 +1,7 @@
 <div class="card">
   <h4 class="flash"><%= flash[:message] %></h4>
   <h4 class="card-header"><%= @plant.name %></h4>
-  <div class="card-grid-two">
+  <div class="card-grid-three">
     <div class="grid-item">   
       <p><strong>Common Name</strong></p>
       <p class="card-info"><%= @plant.cname %></p>
@@ -9,13 +9,16 @@
       <p class="card-info"><%= @plant.sci_name %></p>
       <p><strong>Date Acquired/Planted</strong></p>
       <p class="card-info"><%= @plant.date %></p>
-      <p><strong>Preferred Lighting</strong></p>
-      <p class="card-info"><%= @plant.light %></p>
-      <p><strong>Preferred Humidity</strong></p>
-      <p class="card-info"><%= @plant.humidity %></p>
+      <p><strong>Last Updated</strong></p>
+      <p class="card-info"><%= @plant.updated_at %></p>
+      <p><strong>Created</strong></p>
+      <p class="card-info"><%= @plant.updated_at %></p>
     </div>
 
     <div class="grid-item">   
+      <p><strong>Tracking Water Average?</strong></p>
+      <%= "<p class='card-info'>Yes</p>" if @plant.water_track %>
+      <%= "<p class='card-info'>No</p>" if !@plant.water_track %>
       <%= "<p><strong>Water Average</strong></p>" if @plant.water_track %>
       <%= "<p><strong>Water Schedule</strong></p>" if !@plant.water_track %>
       <p class="card-info"><%= @plant.water_avg %> days</p>
@@ -23,10 +26,23 @@
       <p class="card-info"><%= @plant.water_due %></p>
       <p><strong>Water Due</strong></p>
       <p class="card-info"><%= @plant.due_in_on %></p>
-      <p><strong>Created</strong></p>
-      <p class="card-info"><%= @plant.updated_at %></p>
-      <p><strong>Last Updated</strong></p>
-      <p class="card-info"><%= @plant.updated_at %></p>
+      <p><strong>Preferred Humidity</strong></p>
+      <p class="card-info"><%= @plant.humidity %></p>
+    </div>
+
+    <div class="grid-item">   
+      <p><strong>Tracking Fertilizer Average?</strong></p>
+      <%= "<p class='card-info'>Yes</p>" if @plant.fert_track %>
+      <%= "<p class='card-info'>No</p>" if !@plant.fert_track %>
+      <%= "<p><strong>Fertilizer Average</strong></p>" if @plant.fert_track %>
+      <%= "<p><strong>Fertilizer Schedule</strong></p>" if !@plant.fert_track %>
+      <p class="card-info"><%= @plant.fert_avg %> days</p>
+      <p><strong>Fertilize On</strong></p>
+      <p class="card-info"><%= @plant.fert_due %></p>
+      <p><strong>Fertilizer Due</strong></p>
+      <p class="card-info"><%= @plant.fdue_in_on %></p>
+      <p><strong>Preferred Lighting</strong></p>
+      <p class="card-info"><%= @plant.light %></p>
     </div>
   </div>
 
@@ -35,7 +51,9 @@
     <a href="/plants/<%= @plant.id.to_s %>/edit">edit</a>
     <a href="/plants/<%= @plant.id.to_s %>/delete">delete</a>
     <a href="/plants/<%=@plant.id.to_s %>/new-water-event">water</a>
+    <a href="/plants/<%=@plant.id.to_s %>/new-fertilizer-event">fertilize</a><br><br>
     <a href="/plants/<%=@plant.id.to_s %>/water-events">list water events</a>
+    <a href="/plants/<%=@plant.id.to_s %>/fertilizer-events">list fertlizer events</a>
   </div>
   <%# <h4 class="end-line"></h4> %>
 </div>

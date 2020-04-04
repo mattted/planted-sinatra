@@ -43,7 +43,9 @@ class ApplicationController < Sinatra::Base
       session[:uid] = @user.id 
       @user.plants.each do |plant|
         plant.calc_avg_water_schedule if plant.water_avg?
+        plant.calc_avg_fert_schedule if plant.fert_avg?
         plant.set_water_due_date
+        plant.set_fert_due_date
         plant.save
       end
 

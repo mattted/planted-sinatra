@@ -33,3 +33,18 @@
     <% end %>
   </div>
 </div>
+
+<div class="card">
+  <h4 class="card-header">Due/Overdue for Fertilizer</h4>
+  <div class="card-grid">
+    <% @fert_overdue_plants.each do |plant| %>
+      <div class="grid-item">   
+        <h4 style='text-align:center'><a href="/plants/<%=plant.id%>"><%= plant.name %></a></h4>
+        <p class="card-info"><%= plant.fdue_in_on %></p>
+        <p><strong>Fertilizer Date</strong></p>
+        <p class="card-info"><%= plant.fert_due %></p>
+        <a href="/plants/<%=plant.id%>/new-ferilizer-event">fertilize</a>
+      </div>
+    <% end %>
+  </div>
+</div>
