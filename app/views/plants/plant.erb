@@ -4,9 +4,17 @@
   <div class="card-grid-three">
     <div class="grid-item">   
       <p><strong>Common Name</strong></p>
-      <p class="card-info"><%= @plant.cname %></p>
+      <% if @plant.cname %>
+        <p class="card-info"><%= @plant.cname %></p>
+      <% else %>
+        <p class="card-info"> - </p>
+      <% end %>
       <p><strong>Scientific Name</strong></p>
-      <p class="card-info"><%= @plant.sci_name %></p>
+      <% if @plant.sci_name %>
+        <p class="card-info"><%= @plant.sci_name %></p>
+      <% else %>
+        <p class="card-info"> - </p>
+      <% end %>
       <p><strong>Date Acquired/Planted</strong></p>
       <p class="card-info"><%= @plant.date %></p>
       <p><strong>Last Updated</strong></p>
