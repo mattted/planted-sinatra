@@ -2,6 +2,7 @@
 <div class="card">
   <h4 class="card-header">Recently Added / Updated Plants</h4>
   <div class="card-grid">
+  <%= "<h4 style='text-align:center'>No plants added yet...</h4>" if @rec_plants.count == 0 %>
   <% @rec_plants.each do |plant| %>
     <div class="grid-item-space">   
       <h4 style='text-align:center'><a href="/plants/<%=plant.id%>"><%= plant.name %></a></h4>
@@ -22,6 +23,7 @@
 <div class="card">
   <h4 class="card-header">Due/Overdue for Watering</h4>
   <div class="card-grid">
+    <%= "<h4 style='text-align:center'>No watering needed...</h4>" if @overdue_plants.count == 0 %>
     <% @overdue_plants.each do |plant| %>
       <div class="grid-item-space">   
         <h4 style='text-align:center'><a href="/plants/<%=plant.id%>"><%= plant.name %></a></h4>
@@ -37,6 +39,7 @@
 <div class="card">
   <h4 class="card-header">Due/Overdue for Fertilizer</h4>
   <div class="card-grid">
+    <%= "<h4 style='text-align:center'>No fertilizing needed...</h4>" if @fert_overdue_plants.count == 0 %>
     <% @fert_overdue_plants.each do |plant| %>
       <div class="grid-item-space">   
         <h4 style='text-align:center'><a href="/plants/<%=plant.id%>"><%= plant.name %></a></h4>

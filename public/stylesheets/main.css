@@ -193,6 +193,7 @@ body {
 }
 
 .grid-item-space {
+  /* flex: 1 -1 11%; */
   padding: 15px;
   text-align: center;
   font-size: 0.75rem;
