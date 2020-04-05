@@ -13,7 +13,7 @@ Start a web server on localhost
 
 Navigate to address shown by the `shotgun` command (http://localhost:9393)
 
-### Seeded accounts for testing:
+#### Seeded accounts for testing:
 username: UserOne password: nothing
 username: UserTwo password: nothing
 
