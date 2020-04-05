@@ -8,6 +8,10 @@ class WaterEventsController < ApplicationController
   end
 
   post '/water-events' do
+    if params[:plants].nil?
+      flash[:message] = "Must select plants to add water events"
+      redirect '/water-events/new'
+    end
     params[:plants][:pid].each do |id|
       params[:id] = id
       @plant = exists? if logged_in? && exists? && permission?
