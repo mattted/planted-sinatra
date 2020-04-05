@@ -4,12 +4,12 @@ A simple plant collection Sinatra application to keep a collection of your plant
 ## Installation
 Clone the repository locally and run 
 
-  $ bundle install 
+  `$ bundle install` 
 
 ## Usage
 Start a web server on localhost
 
-  $ shotgun
+  `$ shotgun`
 
 Navigate to address shown by the `shotgun` command (http://localhost:9393)
 
