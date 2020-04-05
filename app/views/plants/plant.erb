@@ -16,9 +16,15 @@
     </div>
 
     <div class="grid-item">   
-      <p><strong>Tracking Water Average?</strong></p>
-      <%= "<p class='card-info'>Yes</p>" if @plant.water_track %>
-      <%= "<p class='card-info'>No</p>" if !@plant.water_track %>
+      <p><strong>Last Watered</strong></p>
+      <% if @plant.water_events.count > 0 %>
+        <p class="card-info"><%= @plant.water_events.sort_by(&:date).last.date %></p>
+      <% else %>
+        <p class="card-info">N/A</p>
+      <% end %>
+      <%# <p><strong>Tracking Water Average?</strong></p> %>
+      <%# <%= "<p class='card-info'>Yes</p>" if @plant.water_track %1> %>
+      <%# <%= "<p class='card-info'>No</p>" if !@plant.water_track %1> %>
       <%= "<p><strong>Water Average</strong></p>" if @plant.water_track %>
       <%= "<p><strong>Water Schedule</strong></p>" if !@plant.water_track %>
       <p class="card-info"><%= @plant.water_avg %> days</p>
@@ -31,9 +37,15 @@
     </div>
 
     <div class="grid-item">   
-      <p><strong>Tracking Fertilizer Average?</strong></p>
-      <%= "<p class='card-info'>Yes</p>" if @plant.fert_track %>
-      <%= "<p class='card-info'>No</p>" if !@plant.fert_track %>
+      <p><strong>Last Fertilized</strong></p>
+      <% if @plant.fert_events.count > 0 %>
+        <p class="card-info"><%= @plant.fert_events.sort_by(&:date).last.date %></p>
+      <% else %>
+        <p class="card-info">N/A</p>
+      <% end %>
+      <%# <p><strong>Last Watered?</strong></p> %>
+      <%# <%= "<p class='card-info'>Yes</p>" if @plant.fert_track %1> %>
+      <%# <%= "<p class='card-info'>No</p>" if !@plant.fert_track %1> %>
       <%= "<p><strong>Fertilizer Average</strong></p>" if @plant.fert_track %>
       <%= "<p><strong>Fertilizer Schedule</strong></p>" if !@plant.fert_track %>
       <p class="card-info"><%= @plant.fert_avg %> days</p>
