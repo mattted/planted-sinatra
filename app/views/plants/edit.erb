@@ -32,7 +32,7 @@
     </select>
     <br>
     <label for="fert">Fertilizer Schedule in days:  *if yes was selected above, an average will be used once fertilizer events are entered</label><br>
-    <input type="text" id="fert" name="plant[fert_avg]" step="0.01" value=<%=@plant.fert_avg%> required>
+    <input type="number" id="fert" name="plant[fert_avg]" step="0.01" value=<%=@plant.fert_avg%> required>
     <br>
     <label for="light">Light Needs: </label><br>
     <select id="light" name="plant[light]" required>
