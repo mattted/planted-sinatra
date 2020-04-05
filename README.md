@@ -13,6 +13,8 @@ Start a web server on localhost
 
 Navigate to address shown by the `shotgun` command (http://localhost:9393)
 
+Seeded testing accounts are set up with usernames of 'UserOne' and 'UserTwo', both with a password of 'nothing'
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/mattted/planted. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/mattted/planted/blob/master/CODE_OF_CONDUCT.md).
