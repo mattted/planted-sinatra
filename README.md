@@ -1,4 +1,4 @@
-# planted
+# Planted
 A simple plant collection Sinatra application to keep a collection of your plants, log events for watering and fertilizing, and track scheduling for each.
 
 ## Installation
@@ -13,7 +13,9 @@ Start a web server on localhost
 
 Navigate to address shown by the `shotgun` command (http://localhost:9393)
 
-Seeded testing accounts are set up with usernames of 'UserOne' and 'UserTwo', both with a password of 'nothing'
+### Seeded accounts for testing:
+username: UserOne password: nothing
+username: UserTwo password: nothing
 
 ## Contributing
 
