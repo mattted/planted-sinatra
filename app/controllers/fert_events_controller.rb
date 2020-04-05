@@ -8,7 +8,6 @@ class FertEventsController < ApplicationController
   end
 
   post '/fertilizer-events' do
-    # TODO: might need to change pid below
     params[:plants][:pid].each do |id|
       params[:id] = id
       @plant = exists? if logged_in? && exists? && permission?
@@ -18,6 +17,7 @@ class FertEventsController < ApplicationController
       @plant.set_fert_due_date
     end
 
+    flash[:message] = "Fertlizer events created successfully"
     redirect '/fertilizer-events'
   end
 

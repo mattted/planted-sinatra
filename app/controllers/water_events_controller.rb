@@ -17,6 +17,7 @@ class WaterEventsController < ApplicationController
       @plant.set_water_due_date
     end
 
+    flash[:message] = "Water events created successfully"
     redirect '/water-events'
   end
 
